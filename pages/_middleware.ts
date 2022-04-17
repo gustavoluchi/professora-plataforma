@@ -1,6 +1,6 @@
+import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-import type { NextRequest } from "next/server";
 
 export default function middleware(req: NextRequest) {
   // Clone the request url
@@ -17,10 +17,10 @@ export default function middleware(req: NextRequest) {
       statusText: "No hostname found in request headers",
     });
 
-  // Only for demo purposes – remove this if you want to use your root domain as the landing page
-  if (hostname === "vercel.pub" || hostname === "platforms.vercel.app") {
-    return NextResponse.redirect("https://demo.vercel.pub");
-  }
+  // Only for demo purposes – remove this if you want to use your root domain as the landing page
+  // if (hostname === "vercel.pub" || hostname === "platforms.vercel.app") {
+  //   return NextResponse.redirect("https://demo.vercel.pub");
+  // }
 
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
@@ -28,8 +28,7 @@ export default function middleware(req: NextRequest) {
         // You can use wildcard subdomains on .vercel.app links that are associated with your Vercel team slug
         // in this case, our team slug is "platformize", thus *.platformize.vercel.app works
         hostname
-          .replace(`.vercel.pub`, "")
-          .replace(`.platformize.vercel.app`, "")
+          .replace(`.professora-plataforma.vercel.app`, "")
       : hostname.replace(`.localhost:3000`, "");
 
   if (pathname.startsWith(`/_sites`))
@@ -54,7 +53,7 @@ export default function middleware(req: NextRequest) {
 
     if (
       hostname === "localhost:3000" ||
-      hostname === "platformize.vercel.app"
+      hostname === "professora-plataforma.vercel.app"
     ) {
       url.pathname = `/home`;
       return NextResponse.rewrite(url);
