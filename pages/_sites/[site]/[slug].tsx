@@ -1,28 +1,27 @@
-import Link from "next/link";
-import remarkMdx from "remark-mdx";
-import { MDXRemote } from "next-mdx-remote";
-import { remark } from "remark";
-import { serialize } from "next-mdx-remote/serialize";
-import { useRouter } from "next/router";
-
 import BlogCard from "@/components/BlogCard";
 import BlurImage from "@/components/BlurImage";
 import Date from "@/components/Date";
 import Examples from "@/components/mdx/Examples";
+import Tweet from "@/components/mdx/Tweet";
 import Layout from "@/components/sites/Layout";
 import Loader from "@/components/sites/Loader";
 import prisma from "@/lib/prisma";
-import Tweet from "@/components/mdx/Tweet";
 import {
   replaceExamples,
   replaceLinks,
-  replaceTweets,
+  replaceTweets
 } from "@/lib/remark-plugins";
-
 import type { AdjacentPost, Meta, _SiteSlugData } from "@/types";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import { useRouter } from "next/router";
 import type { ParsedUrlQuery } from "querystring";
+import { remark } from "remark";
+import remarkMdx from "remark-mdx";
+
+
 
 const components = {
   a: replaceLinks,
@@ -59,7 +58,7 @@ export default function Post({
     description: data.description,
     logo: "/logo.png",
     ogImage: data.image,
-    ogUrl: `https://${data.site?.subdomain}.vercel.pub/${data.slug}`,
+    ogUrl: `https://${data.site?.subdomain}.professora-plataforma.vercel.app/${data.slug}`,
     title: data.title,
   } as Meta;
 

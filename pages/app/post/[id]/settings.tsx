@@ -1,21 +1,21 @@
-import toast, { Toaster } from "react-hot-toast";
-import useSWR from "swr";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-
-import BlurImage from "@/components/BlurImage";
-import CloudinaryUploadWidget from "@/components/Cloudinary";
 import Layout from "@/components/app/Layout";
 import Loader from "@/components/app/Loader";
 import LoadingDots from "@/components/app/loading-dots";
+import BlurImage from "@/components/BlurImage";
+import CloudinaryUploadWidget from "@/components/Cloudinary";
 import Modal from "@/components/Modal";
-import saveImage from "@/lib/save-image";
 import { fetcher } from "@/lib/fetcher";
-import { HttpMethod } from "@/types";
-
-import type { ChangeEvent } from "react";
-
+import saveImage from "@/lib/save-image";
 import type { WithSitePost } from "@/types";
+import { HttpMethod } from "@/types";
+import { useRouter } from "next/router";
+import type { ChangeEvent } from "react";
+import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import useSWR from "swr";
+
+
+
 
 interface SettingsData {
   slug: string;
@@ -127,7 +127,7 @@ export default function PostSettings() {
               <h2 className="font-cal text-2xl">Post Slug</h2>
               <div className="border border-gray-700 rounded-lg flex items-center max-w-lg">
                 <span className="px-5 font-cal rounded-l-lg border-r border-gray-600 whitespace-nowrap">
-                  {settings?.site?.subdomain}.vercel.pub/
+                  {settings?.site?.subdomain}.professora-plataforma.vercel.app/
                 </span>
                 <input
                   className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none rounded-r-lg placeholder-gray-400"

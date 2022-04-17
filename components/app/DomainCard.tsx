@@ -1,10 +1,10 @@
-import useSWR, { mutate } from "swr";
-import { useState } from "react";
 import LoadingDots from "@/components/app/loading-dots";
 import { fetcher } from "@/lib/fetcher";
 import { HttpMethod } from "@/types";
-
 import type { Site } from "@prisma/client";
+import { useState } from "react";
+import useSWR, { mutate } from "swr";
+
 
 type DomainData = Pick<
   Site,
@@ -180,7 +180,7 @@ export default function DomainCard({ data, setData }: DomainCardProps) {
                 <div>
                   <p className="text-sm font-bold">Value</p>
                   <p className="text-sm font-mono mt-2">
-                    {recordType == "CNAME" ? `cname.vercel.pub` : `76.76.21.21`}
+                    {recordType == "CNAME" ? `professora-plataforma.vercel.app` : `76.76.21.21`}
                   </p>
                 </div>
               </div>

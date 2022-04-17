@@ -1,19 +1,19 @@
-import TextareaAutosize from "react-textarea-autosize";
-import toast from "react-hot-toast";
-import useSWR, { mutate } from "swr";
-import { useDebounce } from "use-debounce";
-import { useRouter } from "next/router";
-import { useState, useEffect, useCallback } from "react";
-
 import Layout from "@/components/app/Layout";
 import Loader from "@/components/app/Loader";
 import LoadingDots from "@/components/app/loading-dots";
 import { fetcher } from "@/lib/fetcher";
-import { HttpMethod } from "@/types";
-
-import type { ChangeEvent } from "react";
-
 import type { WithSitePost } from "@/types";
+import { HttpMethod } from "@/types";
+import { useRouter } from "next/router";
+import type { ChangeEvent } from "react";
+import { useCallback, useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import TextareaAutosize from "react-textarea-autosize";
+import useSWR, { mutate } from "swr";
+import { useDebounce } from "use-debounce";
+
+
+
 
 interface PostData {
   title: string;
@@ -191,7 +191,7 @@ export default function Post() {
       if (response.ok) {
         mutate(`/api/post?postId=${postId}`);
         router.push(
-          `https://${post?.site?.subdomain}.vercel.pub/${post?.slug}`
+          `https://${post?.site?.subdomain}.professora-plataforma.vercel.app/${post?.slug}`
         );
       }
     } catch (error) {

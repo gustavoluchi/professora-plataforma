@@ -1,15 +1,15 @@
+import BlogCard from "@/components/BlogCard";
+import BlurImage from "@/components/BlurImage";
+import Date from "@/components/Date";
 import Layout from "@/components/sites/Layout";
+import Loader from "@/components/sites/Loader";
+import prisma from "@/lib/prisma";
+import type { Meta, _SiteData } from "@/types";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import BlurImage from "@/components/BlurImage";
-import BlogCard from "@/components/BlogCard";
-import Loader from "@/components/sites/Loader";
-import Date from "@/components/Date";
-import prisma from "@/lib/prisma";
-
-import type { GetStaticPaths, GetStaticProps } from "next";
-import type { _SiteData, Meta } from "@/types";
 import type { ParsedUrlQuery } from "querystring";
+
 
 interface PathProps extends ParsedUrlQuery {
   site: string;
@@ -32,7 +32,7 @@ export default function Index({ stringifiedData }: IndexProps) {
     ogImage: data.image,
     ogUrl: data.customDomain
       ? data.customDomain
-      : `https://${data.subdomain}.vercel.pub`,
+      : `https://${data.subdomain}.professora-plataforma.vercel.app`,
   } as Meta;
 
   return (

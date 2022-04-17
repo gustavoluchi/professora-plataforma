@@ -1,15 +1,15 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
-import Link from "next/link";
-import useSWR from "swr";
-
-import BlurImage from "@/components/BlurImage";
 import Layout from "@/components/app/Layout";
 import LoadingDots from "@/components/app/loading-dots";
+import BlurImage from "@/components/BlurImage";
 import { fetcher } from "@/lib/fetcher";
 import { HttpMethod } from "@/types";
-
 import type { Post, Site } from "@prisma/client";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import useSWR from "swr";
+
+
 
 interface SitePostData {
   posts: Array<Post>;
@@ -103,12 +103,12 @@ export default function SiteIndex() {
                         </p>
                         <a
                           className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-gray-600 absolute bottom-5 left-10 whitespace-nowrap"
-                          href={`https://${data.site?.subdomain}.vercel.pub/${post.slug}`}
+                          href={`https://${data.site?.subdomain}.professora-plataforma.vercel.app/${post.slug}`}
                           onClick={(e) => e.stopPropagation()}
                           rel="noreferrer"
                           target="_blank"
                         >
-                          {data.site?.subdomain}.vercel.pub/{post.slug} ↗
+                          {data.site?.subdomain}.professora-plataforma.vercel.app/{post.slug} ↗
                         </a>
                       </div>
                     </div>

@@ -1,22 +1,22 @@
-import { useDebounce } from "use-debounce";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
-import useSWR, { mutate } from "swr";
-
-import BlurImage from "@/components/BlurImage";
-import CloudinaryUploadWidget from "@/components/Cloudinary";
 import DomainCard from "@/components/app/DomainCard";
 import Layout from "@/components/app/Layout";
 import LoadingDots from "@/components/app/loading-dots";
+import BlurImage from "@/components/BlurImage";
+import CloudinaryUploadWidget from "@/components/Cloudinary";
 import Modal from "@/components/Modal";
-import saveImage from "@/lib/save-image";
-
 import { fetcher } from "@/lib/fetcher";
+import saveImage from "@/lib/save-image";
 import { HttpMethod } from "@/types";
-
-import type { FormEvent } from "react";
 import type { Site } from "@prisma/client";
+import { useRouter } from "next/router";
+import type { FormEvent } from "react";
+import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import useSWR, { mutate } from "swr";
+import { useDebounce } from "use-debounce";
+
+
+
 
 interface SettingsData
   extends Pick<
@@ -135,7 +135,7 @@ export default function SiteSettings() {
         const available = await response.json();
 
         setSubdomainError(
-          available ? null : `${debouncedSubdomain}.vercel.pub`
+          available ? null : `${debouncedSubdomain}.professora-plataforma.vercel.app`
         );
       } catch (error) {
         console.error(error);

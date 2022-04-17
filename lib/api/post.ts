@@ -1,11 +1,11 @@
-import prisma from "@/lib/prisma";
-
-import type { NextApiRequest, NextApiResponse } from "next";
 import type { Post, Site } from ".prisma/client";
-import type { Session } from "next-auth";
+import prisma from "@/lib/prisma";
 import { revalidate } from "@/lib/revalidate";
-
 import type { WithSitePost } from "@/types";
+import type { NextApiRequest, NextApiResponse } from "next";
+import type { Session } from "next-auth";
+
+
 
 interface AllPosts {
   posts: Array<Post>;
@@ -170,7 +170,7 @@ export async function deletePost(
     });
     if (response) {
       await revalidate(
-        `https://${response.site?.subdomain}.vercel.pub`,
+        `https://${response.site?.subdomain}.professora-plataforma.vercel.app`,
         response.slug
       ); // revalidate for subdomain
     }
