@@ -10,7 +10,7 @@ export default function App({
   pageProps: { session, ...pageProps },
 }: AppProps) {
   return (
-    <PlausibleProvider domain="demo.professora-plataforma.vercel.app">
+    <PlausibleProvider domain="professora.online">
       <SessionProvider session={session}>
         <Component {...pageProps} />
       </SessionProvider>

@@ -58,7 +58,7 @@ export default function Post({
     description: data.description,
     logo: "/logo.png",
     ogImage: data.image,
-    ogUrl: `https://${data.site?.subdomain}.professora-plataforma.vercel.app/${data.slug}`,
+    ogUrl: `https://${data.site?.subdomain}.professora.online/${data.slug}`,
     title: data.title,
   } as Meta;
 

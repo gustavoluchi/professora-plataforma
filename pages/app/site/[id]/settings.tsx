@@ -135,7 +135,7 @@ export default function SiteSettings() {
         const available = await response.json();
 
         setSubdomainError(
-          available ? null : `${debouncedSubdomain}.professora-plataforma.vercel.app`
+          available ? null : `${debouncedSubdomain}.professora.online`
         );
       } catch (error) {
         console.error(error);

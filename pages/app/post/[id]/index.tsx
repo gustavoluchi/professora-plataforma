@@ -191,7 +191,7 @@ export default function Post() {
       if (response.ok) {
         mutate(`/api/post?postId=${postId}`);
         router.push(
-          `https://${post?.site?.subdomain}.professora-plataforma.vercel.app/${post?.slug}`
+          `https://${post?.site?.subdomain}.professora.online/${post?.slug}`
         );
       }
     } catch (error) {

@@ -170,7 +170,7 @@ export async function deletePost(
     });
     if (response) {
       await revalidate(
-        `https://${response.site?.subdomain}.professora-plataforma.vercel.app`,
+        `https://${response.site?.subdomain}.professora.online`,
         response.slug
       ); // revalidate for subdomain
     }
