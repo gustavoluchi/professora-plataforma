@@ -170,7 +170,7 @@ export async function deletePost(
     });
     if (response) {
       await revalidate(
-        `https://${response.site?.subdomain}.professora.online`,
+        `https://${response.site?.subdomain}.meusestudos.com.br`,
         response.slug
       ); // revalidate for subdomain
     }

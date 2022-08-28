@@ -7,9 +7,9 @@ import Layout from "@/components/sites/Layout";
 import Loader from "@/components/sites/Loader";
 import prisma from "@/lib/prisma";
 import {
-  replaceExamples,
-  replaceLinks,
-  replaceTweets
+    replaceExamples,
+    replaceLinks,
+    replaceTweets
 } from "@/lib/remark-plugins";
 import type { AdjacentPost, Meta, _SiteSlugData } from "@/types";
 import type { GetStaticPaths, GetStaticProps } from "next";
@@ -58,7 +58,7 @@ export default function Post({
     description: data.description,
     logo: "/logo.png",
     ogImage: data.image,
-    ogUrl: `https://${data.site?.subdomain}.professora.online/${data.slug}`,
+    ogUrl: `https://${data.site?.subdomain}.meusestudos.com.br/${data.slug}`,
     title: data.title,
   } as Meta;
 

@@ -29,7 +29,7 @@ export default function middleware(req: NextRequest) {
         // in this case, our team slug is "platformize", thus *.platformize.vercel.app works
         hostname
           .replace(`.professora-plataforma.vercel.app`, "")
-          .replace(`.professora.online`, "")
+          .replace(`.meusestudos.com.br`, "")
       : hostname.replace(`.localhost:3000`, "");
 
   if (pathname.startsWith(`/_sites`))
@@ -55,7 +55,7 @@ export default function middleware(req: NextRequest) {
     if (
       hostname === "localhost:3000" ||
       hostname === "professora-plataforma.vercel.app" ||
-      hostname === "professora.online"
+      hostname === "meusestudos.com.br"
     ) {
       url.pathname = `/home`;
       return NextResponse.rewrite(url);

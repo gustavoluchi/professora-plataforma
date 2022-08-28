@@ -135,7 +135,7 @@ export default function SiteSettings() {
         const available = await response.json();
 
         setSubdomainError(
-          available ? null : `${debouncedSubdomain}.professora.online`
+          available ? null : `${debouncedSubdomain}.meusestudos.com.br`
         );
       } catch (error) {
         console.error(error);

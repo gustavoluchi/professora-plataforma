@@ -180,7 +180,7 @@ export default function DomainCard({ data, setData }: DomainCardProps) {
                 <div>
                   <p className="text-sm font-bold">Value</p>
                   <p className="text-sm font-mono mt-2">
-                    {recordType == "CNAME" ? `professora.online` : `76.76.21.21`}
+                    {recordType == "CNAME" ? `meusestudos.com.br` : `76.76.21.21`}
                   </p>
                 </div>
               </div>
